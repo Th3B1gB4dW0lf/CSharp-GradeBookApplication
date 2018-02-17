@@ -14,6 +14,9 @@ namespace GradeBook.GradeBooks
 
         public override char GetLetterGrade(double averageGrade)
         {
+            if (Students.Count < 5)
+                throw new InvalidOperationException();
+
             //How many students it takes to drop a letter grade
             var dropLetterGrade = Students.Count * 0.2;
             
